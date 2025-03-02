@@ -8,3 +8,11 @@
     padding: 0;
 
 }
+
+.global-wallpaper {
+    background-image: url('../../public/images/library_wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
