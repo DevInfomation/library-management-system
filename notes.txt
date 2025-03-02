@@ -1,0 +1,4 @@
+Header color: #343a43
+Font color: #ffffff
+Second font color: #211e18
+Button color: #037bf7
