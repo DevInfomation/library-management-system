@@ -25,12 +25,16 @@
             </div>
             <form action="login" method="POST">
                 @csrf
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col">
                     <h1 class="text-xl font-semibold">User Login Form</h1>
                     <label class="text-left">Email ID:</label>
                     <input type="text" name="email" class="w-96">
                     <label class="text-left" >Password:</label>
                     <input type="password" name="password">
+                    <div class="flex mt-2">
+                        <button class="mr-2 border rounded-md bg-[#037bf7] p-2">Login</button>
+                        <p class="mt-2"><a href="#">Sign up now!!!</a></p>
+                    </div>
                 </div>
             </form>
         </div>
