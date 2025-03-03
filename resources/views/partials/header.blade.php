@@ -5,6 +5,6 @@
     <div class="flex">
         <h2 class="mr-2"><a href="#">Login</a></h2>
         <h2 class="mr-2"><a href="#">Admin login</a></h2>
-        <h2><a href="#">Register</a></h2>
+        <h2><a href="{{route('register')}}">Register</a></h2>
     </div>
 </div>
