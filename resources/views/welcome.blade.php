@@ -2,8 +2,8 @@
 @section('content')
     
     <div class="border rounded-sm bg-gray-200 min-h-[400px]">
-        <div class="flex justify-between">
-            <div class="ml-10">
+        <div class=" flex">
+            <div class="w-1/3 ml-10">
                 <h3 class="mt-2 text-xl font-semibold">Today's Quote</h3>
                 <p class="font-semibold">"There is more treasure in books than in all<br>the pirate's loot on Treasure Island"</p>
                 <p>~ Walt Disney</p>
@@ -23,12 +23,12 @@
                     <li>Free Electricity</li>
                 </ul>
             </div>
-            <form action="login" method="POST">
+            <form action="login" method="POST" class="flex flex-1">
                 @csrf
-                <div class="flex flex-col">
-                    <h1 class="text-xl font-semibold">User Login Form</h1>
+                <div class="flex flex-col flex-1">
+                    <h1 class="text-xl font-semibold text-center">User Login Form</h1>
                     <label class="text-left">Email ID:</label>
-                    <input type="text" name="email" class="w-96">
+                    <input type="text" name="email">
                     <label class="text-left" >Password:</label>
                     <input type="password" name="password">
                     <div class="flex mt-2">
