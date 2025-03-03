@@ -33,6 +33,7 @@
                     <input type="password" name="password" class="border rounded-md p-1">
                     <div class="flex mt-3">
                         <button class="mr-2 border rounded-md bg-[#037bf7] p-2 text-white">Login</button>
+                        <p class="mr-1 mt-1 text-xl">|</p>
                         <p class="mt-2 text-[#037bf7]"><a href="#">Sign up now!!</a></p>
                     </div>
                 </div>
