@@ -10,13 +10,16 @@ class RegisterController extends Controller
 {
     public function getCredentials(Request $request) {
         $incomingFields = $request->validate([
-            'email' => ['required', Rule::unique('users', 'email')],
-            'password' => ['required', 'min:3', 'max:30'],
+            'name' => 'required',
+            'email' => ['required', 'min:3'],
+            'password' => ['required', 'min:3', 'max:255'],
         ]);
-        
+
         $incomingFields['password'] = bcrypt($incomingFields['password']);
 
-        $registeredUser = User::create($incomingFields);
-        auth()->login($registeredUser);
+        $user = User::create($incomingFields);
+        auth()->login($user);
+
+        return redirect()->route('dashboard');
     }
 }
