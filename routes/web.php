@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})->name('dashboard');
+
 Route::get('/register', function() {
     return view('register');
 })->name('register');
 
-Route::post('/register', [RegisterController::class, 'getCredentials'])->name('Credentials');
+Route::post('/register', [RegisterController::class, 'getCredentials'])->name('register.submit');
