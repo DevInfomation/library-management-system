@@ -2,9 +2,11 @@
 @section('content')
     <div class="border rounded-sm bg-gray-200 bg-opacity-90 min-h-[400px]">
         <div class="mx-[35rem] mt-12">
-            <form action="/register" method="POST" class="flex flex-col">
+            <form action="{{route('register.submit')}}" method="POST" class="flex flex-col">
                 @csrf
                 <h1 class="text-2xl text-center font-semibold">Register User</h1>
+                <label class="mb-2">Name:</label>
+                <input type="text" name="name" class="border rounded-md p-1.5 mb-2">
                 <label class="mb-2">Email ID:</label>
                 <input type="text" name="email" class="border rounded-md p-1.5 mb-2">
                 <label class="mb-2">Password:</label>
