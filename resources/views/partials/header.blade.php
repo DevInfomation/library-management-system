@@ -15,7 +15,7 @@
                 <h2 class="mr-2">Email: {{$user->email}}</h2>
             </div>    
             <div class="flex">
-                <select name="My Profile" class="border-0 cursor-pointer drop-shadow-md w-28 mr-2">
+                <select name="My Profile" class="border-0 cursor-pointer drop-shadow-md w-[5.8rem] mr-2 bg-transparent">
                     <option value="view">My Profile</option>
                     <option value="edit">Edit Profile</option>
                     <option value="change">Change Profile</option>
