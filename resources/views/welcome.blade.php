@@ -23,7 +23,7 @@
                     <li>Free Electricity</li>
                 </ul>
             </div>
-            <form action="login" method="POST" class="flex flex-1 mt-7">
+            <form action="{{route('login.submit')}}" method="POST" class="flex flex-1 mt-7">
                 @csrf
                 <div class="flex flex-col flex-1">
                     <h1 class="text-2xl font-semibold text-center">User Login Form</h1>
