@@ -9,9 +9,9 @@
             <h2><a href="{{route('register')}}">Register</a></h2>
         </div>
     @else
-        <div class="flex">
-            <h2 class="mr-2">{{$user->name}}</h2>
-            <h2 class="mr-2">{{$user->email}}</h2>
+        <div class="flex flex-1 justify-evenly">
+            <h2 class="mr-2">Username: {{$user->name}}</h2>
+            <h2 class="mr-2">Email: {{$user->email}}</h2>
             {{-- <h2></h2> --}}
         </div>    
     @endif
