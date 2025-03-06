@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +28,10 @@ Route::get('/register', function() {
     return view('register');
 })->name('register');
 
+Route::get('/header', function() {
+    $user = Auth::user();
+    return view('partials.header', ['user' => $user]);
+});
+
 Route::post('/register', [RegisterController::class, 'getCredentials'])->name('register.submit');
+Route::post('/', [LoginController::class, 'login'])->name('login.submit');
