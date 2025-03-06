@@ -17,11 +17,14 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = Auth::user();
+    return view('welcome', ['user' => $user]);
 })->name('home');
+Route::post('/', [LoginController::class, 'login'])->name('login.submit');
 
 Route::get('/dashboard', function() {
-    return view('dashboard');
+    $user = Auth::user();
+    return view('dashboard', ['user' => $user]);
 })->name('dashboard');
 
 Route::get('/register', function() {
@@ -34,4 +37,3 @@ Route::get('/header', function() {
 });
 
 Route::post('/register', [RegisterController::class, 'getCredentials'])->name('register.submit');
-Route::post('/', [LoginController::class, 'login'])->name('login.submit');
