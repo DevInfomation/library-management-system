@@ -8,11 +8,11 @@ class LoginController extends Controller
 {
     public function login(Request $request) {
         $incomingFields = $request->validate([
-            'loginemail' => 'required',
-            'loginpassword' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
 
-        if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
+        if (auth()->attempt(['email' => $incomingFields['email'], 'password' => $incomingFields['password']])) {
             $request->session()->regenerate();
         }
 
