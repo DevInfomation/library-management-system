@@ -10,6 +10,7 @@ class RegisterController extends Controller
 {
     public function getCredentials(Request $request) {
         $incomingFields = $request->validate([
+            'name' => 'required',
             'email' => ['required', Rule::unique('users', 'email')],
             'password' => ['required', 'min:3', 'max:30'],
         ]);
