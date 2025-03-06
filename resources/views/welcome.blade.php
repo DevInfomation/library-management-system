@@ -35,6 +35,10 @@
                         <button class="mr-2 border rounded-md bg-[#037bf7] hover:bg-sky-500 p-2 text-white">Login</button>
                         <p class="mr-1 mt-1 text-xl">|</p>
                         <p class="mt-2 text-[#037bf7] hover:text-sky-500"><a href="/register">Sign up now!!</a></p>
+                        @error('loginemail')
+                            <div class="text-red-500 mb-4">{{$message}}</div>
+                            {{-- {{dd()}} --}}
+                        @enderror
                     </div>
                 </div>
             </form>
