@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function() {
     $user = Auth::user();
     return view('dashboard', ['user' => $user]);
-})->name('dashboard')->middleware('auth');
+})->name('dashboard');
 
 Route::get('/register', function() {
     return view('register');
