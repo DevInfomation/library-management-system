@@ -20,7 +20,7 @@
                     <option value="edit">Edit Profile</option>
                     <option value="change">Change Profile</option>
                 </select>
-                <form action="{{route('logout')}}">
+                <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button class="">Logout</button>
                 </form>
