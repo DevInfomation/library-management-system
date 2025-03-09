@@ -10,6 +10,17 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'isbn',
+        'title',
+        'author',
+        'genre',
+        'category',
+        'published year',
+        'price',
+        'copies available',
+    ];
+
     protected static function boot() {
         parent::boot();
 
