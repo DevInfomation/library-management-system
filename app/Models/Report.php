@@ -11,6 +11,10 @@ class Report extends Model
     use HasFactory;
 
     public function reportRelationWithUser() {
-        return $this->belongsTo(LoginController::class, 'name');
+        return $this->belongsTo(User::class, 'user_name', 'name');
+    }
+
+    public function reportRelationWithIsbn() {
+        return $this->belongsTo(Book::class, 'isbn', 'book_number');
     }
 }
