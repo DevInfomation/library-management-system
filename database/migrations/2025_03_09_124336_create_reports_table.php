@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->integer('user_id')->uniqid();
             $table->date('reg_no');
+            $table->char('book_number');
+            $table->string('user_name');
         });
     }
 
