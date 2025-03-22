@@ -30,6 +30,18 @@
                 </form>
             </div>
         </div>
+        <div class="border-4 rounded-md border-black w-1/6 bg-white ml-4 mt-4 min-h-[8rem]">
+            <div class="bg-gray-400 p-2">
+                <p>Book Creation</p>
+            </div>
+            <div class="p-2">
+                <div>
+                    {{-- Keep the 0 for now and we will update with the database soon --}}
+                    <p>Create a book here:</p> 
+                </div>
+                <a href="/book-creation"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Create a book</button></a>
+            </div>
+        </div>
     </div>
     <div class="flex justify-evenly">
         <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[8rem]">
