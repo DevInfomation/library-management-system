@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
@@ -35,6 +36,12 @@ Route::get('/header', function() {
     return view('partials.header', ['user' => $user]);
 });
 
+Route::get('/book-creation', function() {
+    $user = Auth::user();
+    return view('book_creation', ['user' => $user]);
+});
+
 Route::post('/register', [RegisterController::class, 'getCredentials'])->name('register.submit');
 Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/book-creation', [BookController::class, 'store'])->name('book_creation.submit');

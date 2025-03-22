@@ -1,7 +1,8 @@
 @extends('layout.default')
 @section('content')
-    <div class="h-screen flex items-center">
-        <form action="" method="POST" class="mx-auto w-1/3 border-4 rounded-md border-black bg-white p-4">
+<div class="h-screen flex items-center">
+    <form action="{{route('book_creation.submit')}}" method="POST" class="mx-auto w-1/3 border-4 rounded-md border-black bg-white p-4">
+        <h1 class="text-center text-2xl mb-2">Here you can create your book</h1>
             @csrf
             <div class="flex flex-col">
                 <label class="mb-1">Book title:</label>
