@@ -11,9 +11,16 @@ class BookController extends Controller
     public function store(Request $request) {
         $validated = $request->validate([
             'isbn' => ['sometimes', new Isbn13Rule],
+            'title' => ['required', 'string'],
+            'author' => ['required', 'string'],
+            'genre' => ['required', 'string'],
+            'category' => ['required', 'string'],
+            'published year' => ['required', 'integer'],
+            'price' => ['required', 'integer'],
+            'copies available' => ['required', 'integer'],
         ]);
 
 
-        $book = Book::create($validated);
+        return Book::create($validated);
     }
 }
