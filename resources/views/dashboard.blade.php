@@ -1,6 +1,6 @@
 @extends('layout.default')
 @section('content')
-    <div class="flex">
+    <div class="flex justify-evenly">
         <div class="border-4 rounded-md border-black w-1/6 bg-white ml-4 mt-4 min-h-[8rem]">
             <div class="bg-gray-400 p-2">
                 <p>Logout</p>
@@ -48,6 +48,7 @@
             </div>
             <div class="p-2">
                 @php
+                    // This variable counts the rows of the books table
                     $count = \DB::table('books')->count();
                 @endphp
                 <p>The amount of books we have:</p>
@@ -64,6 +65,16 @@
                     <p>Return a book here:</p> 
                 </div>
                 <a href="#"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Return a book</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-evenly">
+        <div class="border-4 rounded-md border-black w-1/6 bg-white ml-4 mt-4 min-h-[8rem]">
+            <div class="bg-gray-400 p-2">
+                <p>View all the Books</p>
+            </div>
+            <div class="p-2">
+                <a href="#"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">View all the books</button></a>
             </div>
         </div>
     </div>
@@ -93,9 +104,7 @@
         <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
             <div class="bg-gray-400 p-2">
                 <p class="text-center">The Searched Book</p>
-                @php
-                    $books = \DB::table('books')->select('title', 'author', 'genre')->get();
-                @endphp
+                
             </div>
         </div>
     </div>
