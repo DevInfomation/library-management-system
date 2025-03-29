@@ -16,9 +16,9 @@ class Book extends Model
         'author',
         'genre',
         'category',
-        'published year',
+        'published-year',
         'price',
-        'copies available',
+        'copies-available',
     ];
 
     protected static function boot() {
