@@ -23,4 +23,5 @@ class BookController extends Controller
         Book::create($validated);
         return redirect()->route('dashboard');
     }
+
 }
