@@ -58,4 +58,9 @@ class Book extends Model
 
         return (10 - ($sum % 10)) % 10;
     }
+
+    public static function index() {
+        $books = Book::all();
+        return $books;
+    }
 }
