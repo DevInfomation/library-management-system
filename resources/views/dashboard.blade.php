@@ -93,6 +93,9 @@
         <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
             <div class="bg-gray-400 p-2">
                 <p class="text-center">The Searched Book</p>
+                @php
+                    $books = \DB::table('books')->select('title', 'author', 'genre')->get();
+                @endphp
             </div>
         </div>
     </div>
