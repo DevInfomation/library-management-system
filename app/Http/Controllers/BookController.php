@@ -20,7 +20,7 @@ class BookController extends Controller
             'copies-available' => 'integer',
         ]);
 
-
+        Book::create($validated);
         return redirect()->route('dashboard');
     }
 }
