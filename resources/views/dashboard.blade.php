@@ -42,6 +42,18 @@
                 <a href="/book-creation"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Create a book</button></a>
             </div>
         </div>
+        <div class="border-4 rounded-md border-black w-1/6 bg-white ml-4 mt-4 min-h-[8rem]">
+            <div class="bg-gray-400 p-2">
+                <p>Number of Books</p>
+            </div>
+            <div class="p-2">
+                @php
+                    $count = \DB::table('books')->count();
+                @endphp
+                <p>The amount of books we have:</p>
+                <p class="mt-3 text-center text-3xl">{{$count}}</p>
+            </div>
+        </div>
     </div>
     <div class="flex justify-evenly">
         <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[8rem]">
