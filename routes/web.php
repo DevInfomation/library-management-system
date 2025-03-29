@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\BookController;
+use App\Models\Book;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function() {
     $user = Auth::user();
-    return view('dashboard', ['user' => $user]);
+    return view('dashboard', ['user' => $user, 'books' => Book::all()]);
 })->name('dashboard');
 
 Route::get('/register', function() {
