@@ -11,8 +11,8 @@
     @else
         <div class="flex flex-1">
             <div class="flex flex-1 justify-evenly w-2/3">
-                <h2 class="mr-2">Welcome: {{$user->name}}</h2>
-                <h2 class="mr-2">Email: {{$user->email}}</h2>
+                <h2 class="mr-2">Welcome: {{auth()->user()->name}}</h2>
+                <h2 class="mr-2">Email: {{auth()->user()->email}}</h2>
             </div>    
             <div class="flex">
                 <select name="My Profile" class="border-0 cursor-pointer drop-shadow-md w-[5.8rem] mr-2 bg-transparent">
