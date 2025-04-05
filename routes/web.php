@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function() {
         return view('book_creation');
     });
 
-    Route::get('/search', [BookController::class, 'search'])->name('search');
+    Route::get('/search/', [BookController::class, 'search'])->name('search');
 });
 
 Route::get('/register', function() {
