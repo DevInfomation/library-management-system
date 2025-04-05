@@ -32,6 +32,6 @@ class BookController extends Controller
             ->orWhere('genre', 'LIKE', "%{$search}%")
             ->get();
 
-        return view('search', compact('books'));
+        return view('pages.search', compact('books'));
     }
 }
