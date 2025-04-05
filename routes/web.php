@@ -23,24 +23,31 @@ Route::get('/', function () {
     return view('welcome', ['user' => $user]);
 })->name('home');
 
-Route::get('/dashboard', function() {
-    $user = Auth::user();
-    return view('dashboard', ['user' => $user, 'books' => Book::all()]);
-})->name('dashboard');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/dashboard', function() {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/search', function() {
+        return view ('pages.search');
+    });
+
+    Route::get('/header', function() {
+        return view('partials.header');
+    });
+
+    Route::get('/book-creation', function() {
+        return view('book_creation');
+    });
+
+    Route::get('/search/', [BookController::class, 'search'])->name('search');
+});
 
 Route::get('/register', function() {
     return view('register');
 })->name('register');
 
-Route::get('/header', function() {
-    $user = Auth::user();
-    return view('partials.header', ['user' => $user]);
-});
 
-Route::get('/book-creation', function() {
-    $user = Auth::user();
-    return view('book_creation', ['user' => $user]);
-});
 
 Route::post('/register', [RegisterController::class, 'getCredentials'])->name('register.submit');
 Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
