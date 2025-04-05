@@ -17,7 +17,7 @@
                         <input
                             class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
                             name="search"
-                            type="text"
+                            type="search"
                             id="search"
                             placeholder="Search for a book...">
                     </div>
@@ -30,18 +30,16 @@
         <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
             <div class="bg-gray-400 p-2">
                 <p class="text-center">The Searched Book</p>
-                    @if ($books->isNotEmpty())
-                        @foreach ($books as $book)
-                            <div class="book-list">
-                                <p>{{ $book->title }}</p>
-                            </div>
-                        @endforeach 
-                    @else
-                        <div>
-                            <h2>No books found</h2>
-                        </div>
-                    @endif
             </div>
+            @if ($books->isNotEmpty())
+                @foreach ($books as $book)
+                    <p>{{$book->title}}</p>
+                @endforeach
+            @else
+                <div>
+                    <h2>No books found</h2>
+                </div>
+            @endif
         </div>
     </div>
 
