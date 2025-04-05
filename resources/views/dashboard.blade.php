@@ -103,19 +103,5 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-evenly" id="searched-books" style="display: none;">
-        <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
-            <div class="bg-gray-400 p-2">
-                <p class="text-center">The Searched Book</p>
-                
-            </div>
-        </div>
-    </div>
 
-    <script>
-        function hideSearchedBooks() {
-            const hide = document.getElementById("searched-books");
-            hide.style.display = '';
-        }
-    </script>
 @endsection
