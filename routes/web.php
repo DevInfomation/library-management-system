@@ -28,6 +28,11 @@ Route::get('/dashboard', function() {
     return view('dashboard', ['user' => $user, 'books' => Book::all()]);
 })->name('dashboard');
 
+Route::get('/search', function() {
+    $user = Auth::user();
+    return view ('pages.search', ['user' => $user]);
+});
+
 Route::get('/register', function() {
     return view('register');
 })->name('register');
@@ -46,3 +51,4 @@ Route::post('/register', [RegisterController::class, 'getCredentials'])->name('r
 Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/book-creation', [BookController::class, 'store'])->name('book_creation.submit');
+Route::post('/search', [BookController::class, 'search'])->name('search.submit');
