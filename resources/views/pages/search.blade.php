@@ -28,39 +28,43 @@
                 </div>
                 <div class="mx-w-md mx-auto flex flex-col">
                     <div class="flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
-                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" id="search" type="text" name="search" required/>
+                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" name="search" placeholder="Search here..."/>
                     </div>
                     <button class="text-white border rounded-md bg-green-400 p-1 mt-4" type="submit" type="submit">Search</button>
-                </div>
-                <div>
-                    @if ($books->isNotEmpty())
-                        @foreach ($books as $book)
-                            <p>{{$book->title}}</p>
-                        @endforeach
-                    @else
-                        <div>
-                            <h2>No books found</h2>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
     </form>
 
-    <div class="flex justify-evenly" id="searched-books" style="display: none;">
-        <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
-            <div class="bg-gray-400 p-2">
-                <p class="text-center">The Searched Book</p>
-            </div>
-            {{-- @if ($books->isNotEmpty())
-                @foreach ($books as $book)
-                    <p>{{$book->title}}</p>
-                @endforeach
-            @else
-                <div>
-                    <h2>No books found</h2>
-                </div>
-            @endif --}}
-        </div>
-    </div>
+    <table class="mx-auto border-4 border-collapse bg-black mt-10">
+        <thead>
+            <tr class="border-4 border-collapse bg-black">
+                <th class="text-white p-2">ISBN</th>
+                <th class="text-white p-2">Title</th>
+                <th class="text-white p-2">Author</th>
+                <th class="text-white p-2">Genre</th>
+                <th class="text-white p-2">Category</th>
+                <th class="text-white p-2">Published Year</th>
+                <th class="text-white p-2">Price</th>
+                <th class="text-white p-2">Copies Available</th>
+                <th class="text-white p-2">Rent</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($books as $book)
+                <tr>
+                    <th class="text-white p-2">{{$book->isbn}}</th>
+                    <th class="text-white p-2">{{$book->title}}</th>
+                    <th class="text-white p-2">{{$book->author}}</th>
+                    <th class="text-white p-2">{{$book->genre}}</th>
+                    <th class="text-white p-2">{{$book->category}}</th>
+                    <th class="text-white p-2">{{$book->published_year}}</th>
+                    <th class="text-white p-2">{{$book->price}}</th>
+                    <th class="text-white p-2">{{$book->copies_available}}</th>
+                    <th class="text-white p-2"><button class="border rounded-md bg-green-400 p-2">Rent</button></th>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
 @endsection
