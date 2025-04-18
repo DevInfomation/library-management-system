@@ -4,7 +4,7 @@
         @csrf
         <div class="flex justify-evenly">
             <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
-                <div class="bg-gray-400 p-2">
+                {{-- <div class="bg-gray-400 p-2">
                     <p class="text-center">Search for a book</p>
                 </div>
                 <div class='max-w-md mx-auto flex flex-col'>
@@ -17,21 +17,42 @@
                         <input
                             class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
                             name="search"
-                            type="search"
+                            type="text"
                             id="search"
                             placeholder="Search for a book...">
                     </div>
-                    <button class="text-white border rounded-md bg-green-400 p-1 mt-4" type="button" onclick="hideSearchedBooks()">Search</button>
+                    <button class="text-white border rounded-md bg-green-400 p-1 mt-4" type="submit" onclick="hideSearchedBooks()">Search</button>
+                </div> --}}
+                <div class="bg-gray-400 p-2">
+                    <div class="text-center">Search for a book</div>
+                </div>
+                <div class="mx-w-md mx-auto flex flex-col">
+                    <div class="flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" id="search" type="text" name="search" required/>
+                    </div>
+                    <button class="text-white border rounded-md bg-green-400 p-1 mt-4" type="submit" type="submit">Search</button>
+                </div>
+                <div>
+                    @if ($books->isNotEmpty())
+                        @foreach ($books as $book)
+                            <p>{{$book->title}}</p>
+                        @endforeach
+                    @else
+                        <div>
+                            <h2>No books found</h2>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
     </form>
+
     <div class="flex justify-evenly" id="searched-books" style="display: none;">
         <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
             <div class="bg-gray-400 p-2">
                 <p class="text-center">The Searched Book</p>
             </div>
-            @if ($books->isNotEmpty())
+            {{-- @if ($books->isNotEmpty())
                 @foreach ($books as $book)
                     <p>{{$book->title}}</p>
                 @endforeach
@@ -39,14 +60,7 @@
                 <div>
                     <h2>No books found</h2>
                 </div>
-            @endif
+            @endif --}}
         </div>
     </div>
-
-    <script>
-        function hideSearchedBooks() {
-            const hide = document.getElementById("searched-books");
-            hide.style.display = '';
-        }
-    </script>
 @endsection
