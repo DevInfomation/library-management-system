@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Rules\Isbn13Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Builder;
 
 class BookController extends Controller
 {
@@ -26,17 +27,28 @@ class BookController extends Controller
     }
 
     public function search(Request $request) {
-        $search = $request->search;
+        $search = $request->input('search');
 
-        $books = DB::table('books')->where('title', 'LIKE', "%$search%")->get();
+        // $books = DB::table('books')->where('title', 'LIKE', "%{$search}%")->get();
+
+        // return view('pages.search', compact('books'));
+
+        $books = Book::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('genre', 'LIKE', "%{$search}%")
+            ->get();
 
         return view('pages.search', compact('books'));
 
         // $books = Book::query()
-        //     ->where('title', 'LIKE', "%{$search}%")
-        //     ->orWhere('genre', 'LIKE', "%{$search}%")
-        //     ->get();
+        //     ->when(
+        //         $request->search,
+        //         function(Builder $builder) use ($request) {
+        //             $builder->where('title', 'LIKE', "%{$request->search}%");
+        //         }
+        //     );
+        
+        // return $books;
 
-        // return view('pages.search', $books);
     }
 }
