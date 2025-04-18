@@ -14,11 +14,11 @@
                 <label class="mb-1">Book category:</label>
                 <input type="text" name="category" class="border rounded-md p-1.5 mb-2" placeholder="Enter book title...">
                 <label class="mb-1">Book published year:</label>
-                <input type="text" name="published-year" class="border rounded-md p-1.5 mb-2" placeholder="Enter book title...">
+                <input type="text" name="published_year" class="border rounded-md p-1.5 mb-2" placeholder="Enter book title...">
                 <label class="mb-1">Book price:</label>
                 <input type="text" name="price" class="border rounded-md p-1.5 mb-2" placeholder="Enter book title...">
                 <label class="mb-1">Book copies:</label>
-                <input type="text" name="copies-available" class="border rounded-md p-1.5 mb-2" placeholder="Enter book title...">
+                <input type="text" name="copies_available" class="border rounded-md p-1.5 mb-2" placeholder="Enter book title...">
                 <button class="text-white border rounded-md bg-green-400 p-1 mt-4">Create Your Book</button>
             </div>
         </form>

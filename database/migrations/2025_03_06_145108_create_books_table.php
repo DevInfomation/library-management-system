@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('author')->default('mememe');
             $table->string('genre')->nullable();
             $table->string('category')->nullable();
-            $table->year('published-year')->nullable();
+            $table->integer('published_year')->nullable();
             $table->integer('price')->nullable();
-            $table->integer('copies-available')->nullable();
+            $table->integer('copies_available')->nullable();
             $table->timestamps();
         });
     }

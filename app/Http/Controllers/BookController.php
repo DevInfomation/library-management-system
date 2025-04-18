@@ -17,9 +17,9 @@ class BookController extends Controller
             'author' => 'string',
             'genre' => 'string',
             'category' => 'string',
-            'published-year' => 'integer',
+            'published_year' => 'integer',
             'price' => 'integer',
-            'copies-available' => 'integer',
+            'copies_available' => 'integer',
         ]);
 
         Book::create($validated);
