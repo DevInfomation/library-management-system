@@ -2,8 +2,8 @@
 @section('content')
     <form action="{{route('search')}}" method="GET">
         @csrf
-        <div class="flex justify-evenly">
-            <div class="border-4 rounded-md border-black w-1/3 bg-white ml-4 mt-12 min-h-[10rem]">
+        <div class="grid grid-cols-3 gap-5">
+            <div class="border-4 rounded-md border-black w-md bg-white ml-4 mt-12 min-h-[10rem] col-start-2">
                 {{-- <div class="bg-gray-400 p-2">
                     <p class="text-center">Search for a book</p>
                 </div>
@@ -26,11 +26,22 @@
                 <div class="bg-gray-400 p-2">
                     <div class="text-center">Search for a book</div>
                 </div>
-                <div class="mx-w-md mx-auto flex flex-col">
+                <div class="mx-w-md mx-auto flex flex-col p-2">
                     <div class="flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
                         <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" name="search" placeholder="Search here..."/>
                     </div>
                     <button class="text-white border rounded-md bg-green-400 p-1 mt-4" type="submit" type="submit">Search</button>
+                </div>
+            </div>
+            <div class="border-4 rounded-md border-black w-1/4 bg-white mt-12 h-40">
+                <div class="bg-gray-400 p-2">
+                    <p>Book Creation</p>
+                </div>
+                <div class="p-2">
+                    <div>
+                        <p>Create a book here:</p> 
+                    </div>
+                    <a href="/book-creation"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Create a book</button></a>
                 </div>
             </div>
         </div>
