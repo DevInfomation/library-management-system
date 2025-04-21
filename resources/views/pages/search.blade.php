@@ -33,15 +33,15 @@
                     <button class="text-white border rounded-md bg-green-400 p-1 mt-4" type="submit" type="submit">Search</button>
                 </div>
             </div>
-            <div class="border-4 rounded-md border-black w-1/4 bg-white mt-12 h-40">
+            <div class="border-4 rounded-md border-black w-1/3 bg-white mt-12 h-40">
                 <div class="bg-gray-400 p-2">
-                    <p>Book Creation</p>
+                    <p>Issued Books</p>
                 </div>
                 <div class="p-2">
                     <div>
-                        <p>Create a book here:</p> 
+                        <p>See the issued books you have borrowed</p> 
                     </div>
-                    <a href="/book-creation"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Create a book</button></a>
+                    <a href="#"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Issued Books</button></a>
                 </div>
             </div>
         </div>
