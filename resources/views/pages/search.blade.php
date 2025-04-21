@@ -36,35 +36,37 @@
         </div>
     </form>
 
-    <table class="mx-auto border-4 border-collapse bg-black mt-10">
-        <thead>
-            <tr class="border-4 border-collapse bg-black">
-                <th class="text-white p-2">ISBN</th>
-                <th class="text-white p-2">Title</th>
-                <th class="text-white p-2">Author</th>
-                <th class="text-white p-2">Genre</th>
-                <th class="text-white p-2">Category</th>
-                <th class="text-white p-2">Published Year</th>
-                <th class="text-white p-2">Price</th>
-                <th class="text-white p-2">Copies Available</th>
-                <th class="text-white p-2">Rent</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($books as $book)
-                <tr>
-                    <th class="text-white p-2">{{$book->isbn}}</th>
-                    <th class="text-white p-2">{{$book->title}}</th>
-                    <th class="text-white p-2">{{$book->author}}</th>
-                    <th class="text-white p-2">{{$book->genre}}</th>
-                    <th class="text-white p-2">{{$book->category}}</th>
-                    <th class="text-white p-2">{{$book->published_year}}</th>
-                    <th class="text-white p-2">{{$book->price}}</th>
-                    <th class="text-white p-2">{{$book->copies_available}}</th>
-                    <th class="text-white p-2"><button class="border rounded-md bg-green-400 p-2">Rent</button></th>
+    <form action="#" method="POST">
+        <table class="mx-auto border-4 border-collapse bg-black mt-10">
+            <thead>
+                <tr class="border-4 border-collapse bg-black">
+                    <th class="text-white p-2">ISBN</th>
+                    <th class="text-white p-2">Title</th>
+                    <th class="text-white p-2">Author</th>
+                    <th class="text-white p-2">Genre</th>
+                    <th class="text-white p-2">Category</th>
+                    <th class="text-white p-2">Published Year</th>
+                    <th class="text-white p-2">Price (MKD)</th>
+                    <th class="text-white p-2">Copies Available</th>
+                    <th class="text-white p-2">Rent</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($books as $book)
+                    <tr>
+                        <th class="text-white p-2">{{$book->isbn}}</th>
+                        <th class="text-white p-2">{{$book->title}}</th>
+                        <th class="text-white p-2">{{$book->author}}</th>
+                        <th class="text-white p-2">{{$book->genre}}</th>
+                        <th class="text-white p-2">{{$book->category}}</th>
+                        <th class="text-white p-2">{{$book->published_year}}</th>
+                        <th class="text-white p-2">{{$book->price}}</th>
+                        <th class="text-white p-2">{{$book->copies_available}}</th>
+                        <th class="text-white p-2"><button class="border rounded-md bg-green-400 p-2">Rent</button></th>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </form>
 
 @endsection
