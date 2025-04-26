@@ -25,6 +25,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', function() {
+        if (!Auth::user()) return redirect('/');
         return view('dashboard');
     })->name('dashboard');
 
@@ -38,6 +39,10 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/book-creation', function() {
         return view('book_creation');
+    });
+
+    Route::get('/issued-books', function() {
+        return view('pages.issued_books');
     });
 
     Route::get('/search/', [BookController::class, 'search'])->name('search');
