@@ -41,7 +41,7 @@
                     <div>
                         <p>See the issued books you have borrowed</p> 
                     </div>
-                    <a href="#"><button class="text-white border rounded-md bg-green-400 p-1 mt-4">Issued Books</button></a>
+                    <a href="issued-books"><button type="submit" formaction="/issued-books" class="text-white border rounded-md bg-green-400 p-1 mt-4">Issued Books</button></a>
                 </div>
             </div>
         </div>
