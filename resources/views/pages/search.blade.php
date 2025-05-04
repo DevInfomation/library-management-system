@@ -41,7 +41,7 @@
                     <div>
                         <p>See the issued books you have borrowed</p> 
                     </div>
-                    <a href="issued-books"><button type="submit" formaction="/issued-books" class="text-white border rounded-md bg-green-400 p-1 mt-4">Issued Books</button></a>
+                    <a href="{{route('issuedBooks')}}"><h3 class="mt-5 border-2 rounded-md bg-green-400 text-center text-white">Issued Books</h3></a>
                 </div>
             </div>
         </div>
