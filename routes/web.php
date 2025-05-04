@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/issued-books', function() {
         return view('pages.issued_books');
-    });
+    })->name('issuedBooks');
 
     Route::get('/search/', [BookController::class, 'search'])->name('search');
 });
